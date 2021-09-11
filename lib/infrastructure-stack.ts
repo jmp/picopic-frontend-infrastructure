@@ -48,6 +48,7 @@ export class InfrastructureStack extends cdk.Stack {
         },
         behaviors: [{isDefaultBehavior: true}],
       }],
+      viewerProtocolPolicy: ViewerProtocolPolicy.REDIRECT_TO_HTTPS,
       viewerCertificate: cloudfront.ViewerCertificate.fromAcmCertificate(
         certificate,
         {
@@ -62,13 +63,6 @@ export class InfrastructureStack extends cdk.Stack {
     new route53.ARecord(this, 'PicopicFrontendARecord', {
       zone: hostedZone,
       target: route53.RecordTarget.fromAlias(new targets.CloudFrontTarget(distribution))
-    });
-
-    // Redirect http:// to https://
-    new patterns.HttpsRedirect(this, 'PicopicFrontendRedirect', {
-      zone: hostedZone,
-      recordNames: [`www.${domainName}`],
-      targetDomain: domainName,
     });
 
     bucket.grantRead(cloudFrontOai.grantPrincipal);
