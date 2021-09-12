@@ -1,5 +1,7 @@
 # picopic-frontend-infrastructure
 
+[![build](https://github.com/jmp/picopic-frontend-infrastructure/actions/workflows/build.yml/badge.svg)](https://github.com/jmp/picopic-frontend-infrastructure/actions/workflows/build.yml)
+
 This project defines the infrastructure for the [Picopic frontend][1].
 The AWS CDK is used to define the infrastructure as code.
 
