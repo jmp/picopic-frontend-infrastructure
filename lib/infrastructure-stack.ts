@@ -5,7 +5,6 @@ import * as certificateManager from '@aws-cdk/aws-certificatemanager';
 import * as s3 from '@aws-cdk/aws-s3';
 import * as route53 from '@aws-cdk/aws-route53';
 import * as targets from '@aws-cdk/aws-route53-targets';
-import * as patterns from '@aws-cdk/aws-route53-patterns';
 
 // Domain name used for the frontend
 const domainName = 'picopic.io';
