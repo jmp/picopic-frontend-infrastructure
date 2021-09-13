@@ -19,6 +19,7 @@ export class InfrastructureStack extends cdk.Stack {
       bucketName: 'picopic-frontend',
       websiteIndexDocument: 'index.html',
       removalPolicy: cdk.RemovalPolicy.DESTROY,
+      autoDeleteObjects: true,
     });
 
     // Container for routing traffic for the domain.
